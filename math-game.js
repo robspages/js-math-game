@@ -19,7 +19,6 @@ function nextLevel()
 
 function flash(text,css)
 {
-  console.log('Flash: ' + text);
   fl = $('#flash'); 
   fl.text(text); 
   fl.removeClass();
@@ -29,8 +28,6 @@ function flash(text,css)
 
 function checkAnswer(operator, numerator, denominator, input)
 {
-  console.log("checking answer for " + numerator + operator + denominator + " = " + input); 
-
   numerator = parseInt(numerator);
   denominator = parseInt(denominator);
   input = parseInt(input); 
@@ -64,20 +61,39 @@ function getParameterByName(name, url) {
 
 function setLevel()
 {
-  lvl = getParameterByName('lvl');
-  if(lvl)
+  querylvl = getParameterByName('lvl');
+  configlvl = $('#configLevel');
+
+  console.log("level: " + level +"; querylvl: " + querylvl + "; configlvl: " + configlvl.val());
+
+  if (querylvl)
   {
-    level = lvl;
+    level = querylvl;
   }
+  else
+  {
+    level = (level == configlvl.val() ? level : configlvl.val()); 
+  }
+
+  configlvl.val = level;
+  return level;
 }
 
 function setOperator()
 {
-  op = getParameterByName('op');
-  if(op)
+  queryOp = getParameterByName('op');
+  configOp = $('#configOperator'); 
+  if (queryOp)
   {
-    operator = op;
+    operator = queryOp; 
   }
+  else
+  {
+    operator = (operator == configOp.val ? operator : configOp.val()); 
+  }
+
+  configOp.val = operator;
+  return operator;
 }
 
 function setup()
@@ -133,4 +149,11 @@ function score()
     flash('Wrong :(', 'boo');
   }
   setup(); 
+}
+
+function applyConfig()
+{
+  setLevel();
+  setOperator();
+  setup();
 }
