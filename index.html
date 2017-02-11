@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="math-game.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="math-game.js"></script>
+  </head>
+  <body>
+    <div id="flash"></div>
+    <main>
+      <section id="scoreboard">
+        <ul>
+          <li>Level <span id="current-level"></span>
+          <li>Right: <span id='num-correct'class="score correct">0</span></li>
+          <li>Wrong: <span id='num-incorrect'class="score incorrect">0</span></li>
+        </ul>
+      </section>
+      <section>
+        <form id="game">
+          <span id="numerator"></span>
+          <span id="operator"></span>
+          <span id="denominator"></span>
+          = 
+          <input type="text" id="input" />
+          <input type="submit" value="GO!" />
+        </form>
+      </section>
+    </main>
+
+    <script>
+      $(document).ready(function(){
+        setup(); 
+        $('#game').submit(function(e){
+          e.preventDefault();
+          score();
+        });
+      });
+    </script>
+  </body>
+</html>

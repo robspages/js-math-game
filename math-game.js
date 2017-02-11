@@ -130,7 +130,7 @@ function score()
   else 
   {
     wrong++; 
-    flash('Incorrect :(', 'boo');
+    flash('Wrong :(', 'boo');
   }
   setup(); 
 }
