@@ -103,8 +103,8 @@ body
 #game input[type=submit]
 {
   display: block;
-  width: 90%;
-  margin: .5em auto;
+  width: 60%;
+  margin: .3em auto;
   padding: .25em;
   background-color: #1e57b2;
   color: #fff;
@@ -137,4 +137,26 @@ body
 {
   color:#fff;
   background: #b21e1e;
+}
+
+footer
+{
+  color: #ffffff;
+  font-size: .2em;
+  background-color: #1e57b2;
+  padding: 1em .5em;
+  display: block;
+  position: fixed;
+  width: 100vw;
+  bottom:0;
+}
+
+footer a, footer a:visited
+{
+  color: #ffffff;
+}
+
+footer a:hover
+{
+  color: #20b21e;
 }
