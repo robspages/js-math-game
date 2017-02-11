@@ -1,0 +1,112 @@
+body
+{
+  font-family:'Poppins';
+}
+
+ul 
+{
+  margin: 0;
+  padding: none;
+}
+
+ul li
+{
+  display: inline-block;
+  list-style: none;
+  margin: 0 0.2em;
+  padding: 0;
+}
+
+#scoreboard
+{
+  font-size: .5em;
+  border: 1px solid #c4c4c4;
+  margin: .1em;
+  padding: 0;
+}
+
+.col
+{
+  flex: none;
+  width: 48%;
+}
+
+h2
+{
+  font-size: 1.5em;
+  padding: .25em;
+  display: inline-block;
+}
+
+#current-level
+{
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #1e57b2;
+}
+
+.correct
+{
+  color: #20b21e;
+}
+
+.incorrect
+{
+  color: #b21e1e;
+}
+
+body
+{
+  text-align: center; 
+  font-size: 6vw; 
+  color: #1e57b2;
+}
+
+#game input[type=text]
+{
+  font-size: 6vw; 
+  height: 6vw;
+  width: 12vw;
+  padding: .2em;
+  border: 1px solid #000;
+  background: #fff; 
+}
+
+#game input[type=submit]
+{
+  display: block;
+  width: 90%;
+  margin: .5em auto;
+  padding: .25em;
+  background-color: #1e57b2;
+  color: #fff;
+  text-align: center;
+  border: none;
+  font-size: 1em;
+}
+
+#flash
+{
+  font-size: 4em; 
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  float: left;
+  top:0;
+  left:0;
+  padding: 10% 0 0 0;
+  display: none;
+}
+
+.yay
+{
+  color:#fff;
+  background: #20b21e;
+}
+
+.boo
+{
+  color:#fff;
+  background: #b21e1e;
+}
