@@ -9,8 +9,8 @@ var previous = 0;
 
 function nextLevel()
 {
-  score = right-wrong;
-  if(score > 0 && score%10==0)
+  i = right-wrong;
+  if(i > 0 && i % 10==0)
   {
     flash('Level UP!', 'yay');
     level++;
@@ -22,7 +22,7 @@ function flash(text,css)
   console.log('Flash: ' + text);
   fl = $('#flash'); 
   fl.text(text); 
-  fl.className = ''; 
+  fl.removeClass();
   fl.addClass(css); 
   fl.show().delay(500).fadeOut();
 }
