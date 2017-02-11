@@ -64,8 +64,6 @@ function setLevel()
   querylvl = getParameterByName('lvl');
   configlvl = $('#configLevel');
 
-  console.log("level: " + level +"; querylvl: " + querylvl + "; configlvl: " + configlvl.val());
-
   if (querylvl)
   {
     level = querylvl;
