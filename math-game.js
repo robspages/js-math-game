@@ -9,8 +9,12 @@ var previous = 0;
 
 function nextLevel()
 {
-  flash('Level &#8679;', 'yay');
-  level++;
+  score = right-wrong;
+  if(score > 0 && score%10==0)
+  {
+    flash('Level UP!', 'yay');
+    level++;
+  }
 }
 
 function flash(text,css)
@@ -98,11 +102,7 @@ function updateScoreboard()
   $('#num-correct').text(right);
   $('#num-incorrect').text(wrong); 
   $('#current-level').text(level); 
-
-  if(right > 0 && (right-wrong)%10==0)
-  {
-    nextLevel();
-  }
+  nextLevel();
 }
 
 function getRandomInt(min, max)
