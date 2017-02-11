@@ -1,5 +1,6 @@
 var level = 1;
 var max = 10;
+
 var numerator = level; 
 var denominator= 0; 
 var operator ='+'; 
@@ -83,11 +84,21 @@ function setOperator()
   return operator;
 }
 
+function currentMax()
+{
+  if(level > max)
+  {
+    max = max*2
+  }
+  $('#current_max').text(max);
+  return max
+}
+
 function setup()
 {
   updateScoreboard();
   previous == denominator; 
-  denominator = getRandomIntNotPrevious(1,10,previous);
+  denominator = getRandomIntNotPrevious(1,currentMax(),previous);
 
   setLevel();
   setOperator();
@@ -143,4 +154,25 @@ function applyConfig()
   level = $('#configLevel').val();
   operator = $('#configOperator').val();
   setup();
+}
+
+function reset() 
+{
+  level = 1;
+  max = 10;
+  setup();
+}
+
+function testMax()
+{
+  while(max != NaN && max < 1000000)
+  {
+    oldmax = max;
+    level = level + 5;
+    currentMax(); 
+    if(max != oldmax)
+    {
+      console.log("level: " + level + "; max: " + max);
+    }
+  }
 }
