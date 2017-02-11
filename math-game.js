@@ -63,16 +63,10 @@ function setLevel()
 {
   querylvl = getParameterByName('lvl');
   configlvl = $('#configLevel');
-
   if (querylvl)
   {
     level = querylvl;
   }
-  else
-  {
-    level = (level == configlvl.val() ? level : configlvl.val()); 
-  }
-
   configlvl.val = level;
   return level;
 }
@@ -85,11 +79,6 @@ function setOperator()
   {
     operator = queryOp; 
   }
-  else
-  {
-    operator = (operator == configOp.val ? operator : configOp.val()); 
-  }
-
   configOp.val = operator;
   return operator;
 }
@@ -98,7 +87,7 @@ function setup()
 {
   updateScoreboard();
   previous == denominator; 
-  denominator = getRandomIntNotPrevious(1,10);
+  denominator = getRandomIntNotPrevious(1,10,previous);
 
   setLevel();
   setOperator();
@@ -151,7 +140,7 @@ function score()
 
 function applyConfig()
 {
-  setLevel();
-  setOperator();
+  level = $('#configLevel').val();
+  operator = $('#configOperator').val();
   setup();
 }
