@@ -1,6 +1,8 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link href="math-game.css" rel="stylesheet" />
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -10,6 +12,29 @@
   </head>
   <body>
     <div id="flash"></div>
+    <header>
+      <button id="nav-button">settings</button>
+      <nav>
+        <form id="navForm">
+          <ul>
+            <li>Change Operation: 
+              <select id="configOperator" >
+                <option value="+" selected>Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="*">Multiplication</option>
+                <option value="/">Division</option>
+              </select>
+            </li>
+            <li>Change Level: <input type="number" id="configLevel" value='1'/></li>
+            <!-- 
+            <li>Time Responses?: coming soon</li>
+            <li>Limit Time?: coming soon</li>
+            -->
+            <li><input type="submit" value="Apply changes!" /></li>
+          </ul>
+        </form>
+      </nav>
+    </header>
     <main>
       <section id="scoreboard">
         <ul>
@@ -37,6 +62,15 @@
           e.preventDefault();
           score();
         });
+        $('#navForm').submit(function(e){
+          e.preventDefault();
+          applyConfig(); 
+        }); 
+        $('#nav-button').click(function() {
+            btn = $(this); 
+            $('nav').toggle("slide");
+            btn.toggleClass("opened");
+         });
       });
     </script>
   </body>
